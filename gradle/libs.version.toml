@@ -1,0 +1,68 @@
+[versions]
+kotlin="1.9.22"
+node-gradle="7.0.1"
+ktor="2.3.6"
+openai="3.6.2"
+okio="3.7.0"
+kotlin-result="1.1.18"
+coroutines="1.8.0-RC2"
+mockk="1.13.9"
+truth="1.2.0"
+kotlin-logging="5.1.0"
+koin="3.5.3"
+
+[libraries]
+ktor-client-serialization = { group = "io.ktor", name = "ktor-client-serialization", version.ref = "ktor" }
+ktor-client-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-client-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
+ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktor" }
+ktor-client-test-mock = { group = "io.ktor", name = "ktor-client-mock", version.ref = "ktor" }
+
+kotlin-result = { group = "com.michael-bull.kotlin-result", name = "kotlin-result", version.ref = "kotlin-result" }
+kotlin-result-coroutine = { group = "com.michael-bull.kotlin-result", name = "kotlin-result-coroutines", version.ref = "kotlin-result" }
+
+kotlin-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlin-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
+
+kotlin-mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+
+kotlin-test-google-truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
+
+kotlin-logging = { group = "io.github.oshai", name = "kotlin-logging-jvm", version.ref = "kotlin-logging" }
+
+koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
+
+openai-client = { group = "com.aallam.openai", name = "openai-client", version.ref = "openai" }
+
+squareup-okio = { group = "com.squareup.okio", name = "okio", version.ref = "okio" }
+
+[plugins]
+kotlin-jvm = { version.ref = "kotlin", id = "org.jetbrains.kotlin.jvm" }
+kotlin-serialization = { version.ref = "kotlin", id = "org.jetbrains.kotlin.plugin.serialization" }
+node-gradle = { version.ref = "node-gradle", id = "com.github.node-gradle.node" }
+
+[bundles]
+ktor-clients = [
+    "ktor-client-serialization",
+    "ktor-client-negotiation",
+    "ktor-client-json",
+    "ktor-client-logging"
+]
+ktor-clients-test = [
+    "ktor-client-test-mock"
+]
+kotlin-bundle = [
+    "squareup-okio",
+    "kotlin-result",
+    "kotlin-coroutines",
+    "kotlin-result-coroutine",
+    "kotlin-logging",
+    "koin-core"
+]
+kotlin-test-bundle = [
+    "kotlin-result-coroutine",
+    "kotlin-coroutines-test",
+    "kotlin-mockk",
+    "kotlin-test-google-truth"
+]
